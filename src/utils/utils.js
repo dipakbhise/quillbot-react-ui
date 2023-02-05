@@ -2,6 +2,8 @@ import {
   CloseOutlined,
   DiamondOutlined,
   Done,
+  PauseCircleOutlined,
+  ThumbUpOutlined,
 } from "@mui/icons-material";
 
 export const pricingPlans = [
@@ -53,9 +55,9 @@ export const pricingPlans = [
     ],
     details: "No Credit Card Required",
     background: "#499557",
-    hoverBg:'#308140',
-    url:'https://quillbot.com/signup',
-    id:1
+    hoverBg: "#308140",
+    url: "https://quillbot.com/signup",
+    id: 1,
   },
   {
     name: "Premium",
@@ -156,8 +158,133 @@ export const pricingPlans = [
     ],
     details: "3-Day Money-Back Guarantee",
     background: "#DC9E00",
-    hoverBg:'#dcbb00',
-    url:'https://quillbot.com/upgrade',
-    id:2
+    hoverBg: "#dcbb00",
+    url: "https://quillbot.com/upgrade",
+    id: 2,
   },
+];
+
+export const features = [
+  {
+    title: "100% Money-Back Guarantee",
+    desc: "Changed your mind? We’ll refund your payment within 3 days of purchase.",
+    icon: <ThumbUpOutlined />,
+  },
+  {
+    title: "Pause Your Subscription",
+    desc: "Taking a break? Your subscription also pauses when you do!",
+    icon: <PauseCircleOutlined />,
+  },
+];
+
+export const siteLinks = [
+  {
+    id: 1,
+    title: "Writing Tools",
+    links: [
+      { text: "Paraphrasing Tool", url: "https://quillbot.com/" },
+      { text: "Summarizer", url: "https://quillbot.com/summarize" },
+      { text: "Co-Writer", url: "https://quillbot.com/co-writer" },
+      {
+        text: "Plagiarism Checker",
+        url: "https://quillbot.com/plagiarism-checker",
+      },
+      { text: "Word Counter", url: "https://quillbot.com/word-counter" },
+    ],
+  },
+  {
+    id: 1,
+    title: "Free Grammar Tools",
+    links: [
+      { text: "Grammar Checker", url: "https://quillbot.com/grammar-check" },
+      { text: "Proofreader", url: "https://quillbot.com/online-proofreader" },
+      { text: "Spell Checker", url: "https://quillbot.com/spell-checker" },
+      {
+        text: "Punctuation Checker",
+        url: "https://quillbot.com/punctuation-checker",
+      },
+      { text: "Essay Checker", url: "https://quillbot.com/essay-checker" },
+    ],
+  },
+  {
+    id: 1,
+    title: "Citation Tools",
+    links: [
+      {
+        text: "Citation Generator",
+        url: "https://quillbot.com/citation-generator",
+      },
+      {
+        text: "APA Citation Generator",
+        url: "https://quillbot.com/citation-generator/apa",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Company",
+
+    links: [
+      { text: "Team", url: "https://quillbot.com/about" },
+      { text: "Careers", url: "https://quillbot.com/careers" },
+      { text: "Help Center", url: "https://help.quillbot.com/hc/en-us" },
+      { text: "Contact Us", url: "https://quillbot.com/contact" },
+    ],
+  },
+
+  {
+    id: 1,
+    title: "Extensions",
+    links: [
+      {
+        text: "QuillBot for Chrome",
+        url: "https://chrome.google.com/webstore/detail/quillbot-for-chrome/iidnbdjijdkbmajdffnidomddglmieko?hl:%20en-US&utm_source=quillbot.com&utm_medium=referral&utm_campaign=side_navbar-link",
+        icon: "https://assets.quillbot.com/images/theme/commonImages/chrome.png",
+      },
+      {
+        text: "QuillBot for Chrome",
+        url: "https://quillbot.com/word",
+        icon: "https://assets.quillbot.com/images/theme/commonImages/msWord.svg",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Student Resources",
+    links: [
+      { text: "Tools & Videos", url: "https://quillbot.com/student-resources" },
+      { text: "Educational Courses", url: "https://quillbot.com/courses/" },
+    ],
+  },
+  {
+    id: 1,
+    title: "Knowledge Base",
+    links: [
+      {
+        text: "Paraphrasing Guide",
+        url: "https://quillbot.com/guides/paraphrasing",
+      },
+      {
+        text: "AI Writing Assistant",
+        url: "https://quillbot.com/guides/ai-writing-assistant",
+      },
+      { text: "QuillBot Blog", url: "https://quillbot.com/blog/" },
+    ],
+  },
+  {
+    id: 1,
+    title: "Services",
+    links: [
+      { text: "Premium", url: "https://quillbot.com/premium" },
+      { text: "Affiliate", url: "https://quillbot.com/affiliates" },
+      { text: "Request a Demo", url: "https://quillbot.com/contact" },
+    ],
+  },
+];
+
+export const legal = [
+  { text: "Privacy Policy", url: "https://quillbot.com/privacy" },
+  { text: "Terms of Service", url: "https://quillbot.com/terms" },
+  { text: "CCPA", url: "https://quillbot.com/ccpa" },
+  { text: "Copyright Policy", url: "https://quillbot.com/copyright-policy" },
 ];

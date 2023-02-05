@@ -10,6 +10,14 @@ const Plans = () => {
   const matches = useMediaQuery("@media (max-width:975px)");
   const [isFreeBtnHover, setIsFreeBtnHover] = useState(false); // to detect hover and mouse leave of free plan button
   const [isPremiumBtnHover, setIsPremiumBtnHover] = useState(false); // to detect hover and mouse leave of premium plan button
+  const [isBannerBtnHover, setIsBannerBtnHover] = useState(false);
+
+  const handleBannerBtnMouseEnter = () => {
+    setIsBannerBtnHover(true);
+  };
+  const handleBannerBtnMouseLeave = () => {
+    setIsBannerBtnHover(false);
+  };
 
   // to detect hover of free and premium plan button
   const handleMouseEnter = (id) => {
@@ -134,6 +142,7 @@ const Plans = () => {
                       padding: "10px, 16px",
                       boxShadow: "none",
                       width: "100%",
+                      fontWeight: "700",
                     }}
                   >
                     {item.btnText}
@@ -216,6 +225,110 @@ const Plans = () => {
         }}
       >
         <span style={{ fontSize: "14px" }}>*Scan up to 20 pages a month</span>
+      </div>
+
+      {/* Plan Banner */}
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "18px 20px",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#E5F0F9",
+            borderTop: "6px solid #499557",
+            padding: "20px 36px 10px 36px",
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            borderRadius: "6px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                // textAlign:'center',
+                padding: "10px",
+                // width: "100%",
+              }}
+            >
+              <div style={{ marginBottom: "6px" }}>
+                <span
+                  style={{
+                    lineHeight: "1.5",
+                    color: "rgb(37, 37, 37)",
+                    fontSize: "24px",
+                    fontWeight: 600,
+                  }}
+                >
+                  Introducing the QuillBot Team Plan
+                </span>
+              </div>
+              <div style={{ marginBottom: "16px", width:'auto' }}>
+                <span
+                  style={{
+                    fontWeight: 400,
+                    lineHeight: 1.5,
+                    color: "#252525",
+                    fontSize: "16px",
+
+                  }}
+                >
+                  Build and manage an all-star team of writers. Multiple
+                  subscriptions. Discounted <br/> pricing. One payment. Questions?{" "}
+                  <a
+                    href="https://quillbot.com/contact"
+                    target={"_blank"}
+                    style={{ color: "#2971fe" }}
+                  >
+                    Contact us
+                  </a>{" "}
+                </span>
+              </div>
+              <div >
+                <a
+                  href={"https://quillbot.com/upgrade/teams"}
+                  target="_blank"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    variant="contained"
+                    style={{
+                      // backgroundColor: "#499557",
+                      fontWeight: "700",
+                      borderRadius: "20px",
+                      margin: "10px 0px",
+                      textTransform: "none",
+                      fontSize: "0.875rem",
+                      lineHeight: 1.75,
+                      padding: "6px 16px",
+                      boxShadow: "none",
+                      backgroundColor: isBannerBtnHover ? "#308140" : "#499557",
+                    }}
+                    onMouseEnter={handleBannerBtnMouseEnter}
+                    onMouseLeave={handleBannerBtnMouseLeave}
+                  >
+                    See Details
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div >
+            <img
+              src="https://assets.quillbot.com/images/payments/team-plan-banner.svg"
+              height="125px"
+              width="360px"
+              alt="team_plan"
+            />
+          </div>
+        </div>
       </div>
     </>
   );

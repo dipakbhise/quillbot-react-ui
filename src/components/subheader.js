@@ -43,6 +43,7 @@ const Subheader = () => {
               padding: "6px 60px",
               boxShadow: "none",
               backgroundColor: isBtnHover ? "#308140" : "#499557",
+              fontWeight:'700',
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

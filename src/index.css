@@ -25,3 +25,25 @@ button{
   font-family:  'Open Sans', 'sans-serif' !important;
 
 }
+
+a{
+  text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  cursor: default;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #C2C2C2;
+  border-color: #C2C2C2;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track-piece {
+  background-color: #F1F1F1;
+}

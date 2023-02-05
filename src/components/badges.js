@@ -1,8 +1,10 @@
-import { useMediaQuery } from "@mui/material";
+import { Button, ListItem, useMediaQuery } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css"; 
-import "intersection-observer";  // For IE11
+import "react-circular-progressbar/dist/styles.css";
+import "intersection-observer"; // For IE11
+import { ThumbUpOutlined } from "@mui/icons-material";
+import { features } from "../utils/utils";
 
 const Badges = () => {
   const matches = useMediaQuery("@media (max-width:975px)");
@@ -14,6 +16,15 @@ const Badges = () => {
   const [studentPercentage, setstudentPercentage] = useState(0); // for student badge
   const [users, setusers] = useState(0); // for usercount badge
   const [isFocused, setIsFocused] = useState(false); // to add animation on badge div focus
+
+  const [isBtnHover, setIsBtnHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsBtnHover(true);
+  };
+  const handleMouseLeave = () => {
+    setIsBtnHover(false);
+  };
 
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
@@ -71,129 +82,217 @@ const Badges = () => {
     <>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: "80px",
+          backgroundPosition: "center bottom",
+          backgroundRepeat: "no-repeat",
+          backgroundImage:
+            "url(https://assets.quillbot.com/images/theme/light/premiumPage/bottomBg.svg)",
+          backgroundSize: "100% auto",
+          padding: "26px 0px 60px",
         }}
       >
         <div
           style={{
-            fontWeight: "400",
-            fontSize: "26px",
-            marginBottom: "10px",
-            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "80px",
           }}
         >
-          <span> Write better, faster, and clearer instantly</span>
+          <div
+            style={{
+              fontWeight: "400",
+              fontSize: "26px",
+              marginBottom: "10px",
+              textAlign: "center",
+            }}
+          >
+            <span> Write better, faster, and clearer instantly</span>
+          </div>
+
+          <div style={{ width: "100%", textAlign: "center" }}>
+            <p style={{ maxWidth: "470px", margin: "0px auto 58px" }}>
+              {" "}
+              QuillBot is trusted by students, professional writers, and
+              business people who want to write more effectively.
+            </p>
+          </div>
         </div>
 
-        <div style={{ width: "100%", textAlign: "center" }}>
-          <p style={{ maxWidth: "470px", margin: "0px auto 58px" }}>
-            {" "}
-            QuillBot is trusted by students, professional writers, and business
-            people who want to write more effectively.
-          </p>
-        </div>
-      </div>
-
-      <div
-        ref={badgeRef}
-        className={isFocused ? "badges" : null}
-        style={{
-          display: "flex",
-          flexDirection: matches && "column",
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
-          marginBottom: "5rem",
-        }}
-      >
-        <div className="app">
-          <div style={{ width: 150, marginLeft: 70, position: "relative" }}>
-            <CircularProgressbar
-              value={timePercentage}
-              text={`${timePercentage}%`}
-              style={{ position: "relative", color: "red", fontSize: "40px" }}
-            />
-            <span
+        <div
+          ref={badgeRef}
+          className={isFocused ? "badges" : null}
+          style={{
+            display: "flex",
+            flexDirection: matches && "column",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            marginBottom: "3rem",
+          }}
+        >
+          <div className="app">
+            <div style={{ width: 150, marginLeft: 70, position: "relative" }}>
+              <CircularProgressbar
+                value={timePercentage}
+                text={`${timePercentage}%`}
+                style={{ position: "relative", color: "red", fontSize: "40px" }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  top: "62%",
+                  left: "21%",
+                  textAlign: "center",
+                  color: "rgb(73, 149, 87)",
+                  fontWeight: "bold",
+                }}
+              >
+                Time Saved
+              </span>
+            </div>
+            <div
               style={{
-                position: "absolute",
-                top: "62%",
-                left: "21%",
+                width: "20rem",
                 textAlign: "center",
-                color: "rgb(73, 149, 87)",
-                fontWeight: "bold",
+                margin: "10px 0px",
               }}
             >
-              Time Saved
-            </span>
+              <span style={{ textAlign: "center" }}>
+                Average time savings per writing project.
+              </span>
+            </div>
           </div>
-          <div
-            style={{ width: "20rem", textAlign: "center", margin: "10px 0px" }}
-          >
-            <span style={{ textAlign: "center" }}>
-              Average time savings per writing project.
-            </span>
-          </div>
-        </div>
 
-        <div className="app" style={{ margin: matches && "2rem 0px" }}>
-          <div style={{ width: 150, marginLeft: 70, position: "relative" }}>
-            <CircularProgressbar
-              value={userPercentage}
-              text={`${users}+`}
-              style={{ position: "relative", color: "red" }}
-            />
-            <span
+          <div className="app" style={{ margin: matches && "2rem 0px" }}>
+            <div style={{ width: 150, marginLeft: 70, position: "relative" }}>
+              <CircularProgressbar
+                value={userPercentage}
+                text={`${users}+`}
+                style={{ position: "relative", color: "red" }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  top: "62%",
+                  left: "35%",
+                  textAlign: "center",
+                  color: "rgb(73, 149, 87)",
+                  fontWeight: "bold",
+                }}
+              >
+                million
+              </span>
+            </div>
+            <div
               style={{
-                position: "absolute",
-                top: "62%",
-                left: "35%",
+                width: "20rem",
                 textAlign: "center",
-                color: "rgb(73, 149, 87)",
-                fontWeight: "bold",
+                margin: "10px 0px",
               }}
             >
-              million
-            </span>
+              <span style={{ textAlign: "center" }}>
+                Trusted by millions worldwide.
+              </span>
+            </div>
           </div>
-          <div
-            style={{ width: "20rem", textAlign: "center", margin: "10px 0px" }}
-          >
-            <span style={{ textAlign: "center" }}>
-              Trusted by millions worldwide.
-            </span>
+
+          <div className="app">
+            <div style={{ width: 150, marginLeft: 70, position: "relative" }}>
+              <CircularProgressbar
+                value={studentPercentage}
+                text={`${studentPercentage}%`}
+                style={{ position: "relative", color: "red" }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  top: "62%",
+                  left: "23%",
+                  color: "rgb(73, 149, 87)",
+                  fontWeight: "bold",
+                }}
+              >
+                of students
+              </span>
+            </div>
+            <div
+              style={{
+                width: "20rem",
+                textAlign: "center",
+                margin: "10px 0px",
+              }}
+            >
+              <span style={{ textAlign: "center" }}>
+                Who reported their grades improved after using QuillBot.
+              </span>
+            </div>
           </div>
         </div>
 
-        <div className="app">
-          <div style={{ width: 150, marginLeft: 70, position: "relative" }}>
-            <CircularProgressbar
-              value={studentPercentage}
-              text={`${studentPercentage}%`}
-              style={{ position: "relative", color: "red" }}
-            />
-            <span
+        <div
+          style={{ display: "flex", justifyContent: "center", width: "100%" }}
+        >
+          <a
+            href={"https://quillbot.com/upgrade"}
+            target="_blank"
+            style={{ textDecoration: "none" }}
+          >
+            <Button
+              variant="contained"
               style={{
-                position: "absolute",
-                top: "62%",
-                left: "23%",
-                color: "rgb(73, 149, 87)",
-                fontWeight: "bold",
+                // backgroundColor: "#499557",
+                borderRadius: "20px",
+                marginBottom: "35px",
+                textTransform: "none",
+                fontSize: "17px",
+                padding: "8px 40px",
+                boxShadow: "none",
+                backgroundColor: isBtnHover ? "#308140" : "#499557",
+                fontWeight: "700",
+              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              Upgrade to Premium
+            </Button>
+          </a>
+        </div>
+
+        {features?.map((feature, index) => (
+          <>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                color: "#252525",
+                padding:'0px 24px 24px 24px'
+
+                // marginTop: "80px",
               }}
             >
-              of students
-            </span>
-          </div>
-          <div
-            style={{ width: "20rem", textAlign: "center", margin: "10px 0px" }}
-          >
-            <span style={{ textAlign: "center" }}>
-              Who reported their grades improved after using QuillBot.
-            </span>
-          </div>
-        </div>
+              <div
+                style={{
+                  fontWeight: "500",
+                  fontSize: "1.25rem",
+                  marginBottom: "10px",
+                  textAlign: "center",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <div>
+                  <span> {feature.title}&nbsp;</span>
+                </div>{" "}
+                {feature.icon}
+              </div>
+
+              <div style={{ width: "100%", textAlign: "center" }}>
+                <p style={{ marginTop: "2px" }}> {feature.desc}</p>
+              </div>
+            </div>
+          </>
+        ))}
       </div>
 
       <style jsx>{`
