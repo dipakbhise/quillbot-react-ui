@@ -39,7 +39,7 @@ const Footer = () => {
             <div
               style={{
                 display: "flex",
-                gap: "9px",
+                // gap: "9px",
                 alignItems: "center",
                 paddingTop: "15px",
                 fontSize: "14px",
@@ -54,6 +54,7 @@ const Footer = () => {
                       height: "4px",
                       background: "#252525",
                       borderRadius: "50%",
+                      margin:'0px 9px'
                     }}
                   ></span>{" "}
                   <a
