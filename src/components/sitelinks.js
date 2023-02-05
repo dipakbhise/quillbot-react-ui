@@ -109,7 +109,7 @@ const SiteLinks = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "20px",
+                // gap: "20px",
                 paddingTop: "20px",
               }}
             >
@@ -119,7 +119,7 @@ const SiteLinks = () => {
                 </a>
               </div>
 
-              <div>
+              <div style={{padding:'0px 20px'}}>
                 <a href="#">
                   <img
                     src="https://assets.quillbot.com/images/theme/commonImages/footer/facebook.svg"
@@ -133,7 +133,7 @@ const SiteLinks = () => {
                   <img src="	https://assets.quillbot.com/images/theme/commonImages/footer/twitter.svg" />
                 </a>
               </div>
-              <div>
+              <div style={{paddingLeft:' 20px'}}>
                 <a href="#">
                   <img src=" https://assets.quillbot.com/images/theme/commonImages/footer/instagram.svg" />
                 </a>
